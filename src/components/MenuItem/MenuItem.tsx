@@ -1,28 +1,29 @@
 import { memo } from "react";
 import type { MenuTreeNode } from "../types/MenuTreeTypes";
-import { useMenu } from "../hooks/useMenu";
-import { getIconForItem } from "../utils/getIconForItem";
-import { Menu } from "./Menu";
+import { useMenu } from "../../hooks/useMenu";
+import { getIconForItem } from "../../utils/getIconForItem";
+import Menu from "../Menu/Menu";
+import styles from "./MenuItem.module.css";
 
 interface MenuItemProps {
   item: MenuTreeNode;
 }
 
-export const MenuItem = memo(({ item }: MenuItemProps) => {
+const MenuItem = memo(({ item }: MenuItemProps) => {
   const { openNodes, toggleNode } = useMenu();
   const hasSubitems = Boolean(item.subitems?.length);
   const isOpen = hasSubitems && openNodes[item.name];
 
   return (
-    <li>
+    <li className={styles.menuItem}>
       <div
-        className={hasSubitems ? "menu-folder" : "menu-file"}
+        className={hasSubitems ? styles.menuFolder : styles.menuFile}
         onClick={() => hasSubitems && toggleNode(item.name)}
       >
         <img
           src={getIconForItem(item, isOpen)}
           alt='icon'
-          className='menu-icon'
+          className={styles.menuIcon}
         />
         {item.name}
       </div>
@@ -30,3 +31,5 @@ export const MenuItem = memo(({ item }: MenuItemProps) => {
     </li>
   );
 });
+
+export default MenuItem;

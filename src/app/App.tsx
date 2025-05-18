@@ -1,4 +1,4 @@
-import { Menu } from "../components/Menu";
+import Menu from "../components/Menu/Menu";
 import { useMenuData } from "../hooks/useMenuData";
 
 function App() {

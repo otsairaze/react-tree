@@ -1,4 +1,4 @@
-import type { MenuTreeNode } from "../types/MenuTreeTypes";
+import type { MenuTreeNode } from "../components/types/MenuTreeTypes";
 
 const FILE_ICONS: Record<string, string> = {
   ".js": "/icons/file-js.png",

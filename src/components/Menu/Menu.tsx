@@ -1,19 +1,20 @@
 import { memo } from "react";
 import type { MenuTreeNode } from "../types/MenuTreeTypes";
 
-import "../styles/Menu.css";
-import { MenuItem } from ".";
+import MenuItem from "../MenuItem/MenuItem";
 
 interface MenuProps {
   items: MenuTreeNode[];
 }
 
-export const Menu = memo(({ items }: MenuProps) => {
+const Menu = memo(({ items }: MenuProps) => {
   return (
-    <ul className='menu-wrapper'>
+    <ul>
       {items.map((item) => (
         <MenuItem key={item.name} item={item} />
       ))}
     </ul>
   );
 });
+
+export default Menu;

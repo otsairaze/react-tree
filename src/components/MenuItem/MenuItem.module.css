@@ -1,0 +1,23 @@
+.menuItem {
+  list-style: none;
+}
+
+.menuFolder {
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.menuFile {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.menuIcon {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
